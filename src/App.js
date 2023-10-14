@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+function countWords() { 
+  var text = document .getElementById("inputField").value; 
+  var numWords = text.length;
+  document.getElementById("show") 
+      .innerHTML = "Word count: "+numWords; 
+} 
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <center><div className="box">
+    <h1>Responsive Paragraph Word Counter</h1>
+    <textarea id="inputField" cols="70" rows="10" onInput={countWords}></textarea>
+    
+    <p id="show"></p>
     </div>
+    </center>
+    
   );
 }
-
 export default App;
