@@ -1,10 +1,16 @@
 import React from "react";
 
 function countWords() { 
-  var text = document .getElementById("inputField").value; 
+  var text = document.getElementById("inputField").value; 
   var numWords = text.length;
-  document.getElementById("show") 
-      .innerHTML = "Word count: "+numWords; 
+  var count=0;
+  for(var i=0;i<numWords-1;++i){
+    if (text[i]===' ' && text[i+1]!==' '){
+      ++count;
+    }
+  }
+  ++count;
+  document.getElementById("show").innerHTML = "Word count: "+count; 
 } 
 
 function App() {
